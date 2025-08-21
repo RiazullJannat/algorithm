@@ -9,9 +9,9 @@ void dfs(int src)
     {
         visited[src] = true;
         sum++;
-        for(int val : adjList[src])
+        for (int val : adjList[src])
         {
-            dfs
+            dfs(val);
         }
     }
 }
@@ -26,5 +26,9 @@ int main()
         adjList[a].push_back(b);
         adjList[b].push_back(a);
     }
+    int s;
+    cin >> s;
+    dfs(s);
+    cout << sum;
     return 0;
 }
