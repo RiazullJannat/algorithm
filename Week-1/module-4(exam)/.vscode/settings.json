@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "valarray": "cpp",
+        "future": "cpp"
+    }
+}
