@@ -32,16 +32,25 @@ int main()
             }
         }
     }
+    bool cycle = false;
     for (int i = 0; i < n; i++)
+        if (adj_matrix[i][i] < 0)
+            cycle = true;
+    if (cycle)
+        cout << "cycle detected";
+    else
     {
-        for (int j = 0; j < n; j++)
+        for (int i = 0; i < n; i++)
         {
-            if (adj_matrix[i][j] == INT_MAX)
-                cout << "O" << " ";
-            else
-                cout << adj_matrix[i][j] << " ";
+            for (int j = 0; j < n; j++)
+            {
+                if (adj_matrix[i][j] == INT_MAX)
+                    cout << "O" << " ";
+                else
+                    cout << adj_matrix[i][j] << " ";
+            }
+            cout << endl;
         }
-        cout << endl;
     }
     return 0;
 }
