@@ -7,7 +7,7 @@ int find(int s)
 {
     if (par[s] == -1)
         return s;
-    int leader = find(s);
+    int leader = find(par[s]);
     par[s] = leader;
     return leader;
 }
@@ -15,6 +15,8 @@ void dsu_union(int node1, int node2)
 {
     int leader1 = find(node1);
     int leader2 = find(node2);
+    if (leader1 == leader2)
+        return;
     if (group_size[leader1] >= group_size[leader2])
     {
         par[leader2] = leader1;
@@ -34,7 +36,7 @@ int main()
     int n, e;
     cin >> n >> e;
     cmp = n;
-    mx = INT_MIN;
+    mx= 1;
     while (e--)
     {
         int a, b;
