@@ -28,10 +28,6 @@ int main()
     for (int i = 0; i <= n; i++)
         for (int j = 0; j <= maxSize; j++)
             dp[i][j] = -1;
-    // for (int i = 0; i < n; i++)
-    //     cin >> cost[i];
-    // for (int i = 0; i < n; i++)
-    //     cin >> width[i];
     for (int i = 0; i < n; i++)
     {
         cin >> width[i] >> cost[i];
